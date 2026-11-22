@@ -18,6 +18,11 @@
         <a href="reviews.html">Отзывы</a>
         <a href="contacts.html" class="active">Контакты</a>
       </nav>
+      <button class="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="tel:+79990000000" class="header__phone">+7 999 000 00 00</a>
     </div>
   </header>
@@ -25,15 +30,24 @@
   <main class="section">
     <div class="container">
       <h1>Контакты и запись</h1>
-      <div class="contacts-box">
-        <p class="contacts-desc">Напишите в удобный мессенджер или позвоните, чтобы обсудить идею съемки и забронировать дату.</p>
-        <p class="contacts-phone"><a href="tel:+79990000000">+7 999 000 00 00</a></p>
-        <p class="contacts-city">Город: [Город], возможен выезд</p>
-        <div class="socials-btns">
-          <a href="https://t.me" target="_blank" class="btn">Написать в Telegram</a>
-          <a href="https://wa.me" target="_blank" class="btn btn-outline">Написать в WhatsApp</a>
+      
+      <div class="contacts-grid">
+        <div class="contacts-box">
+          <p class="contacts-desc">Напишите в удобный мессенджер или позвоните, чтобы обсудить идею съемки, подобрать локацию и забронировать дату.</p>
+          <p class="contacts-phone"><a href="tel:+79990000000">+7 999 000 00 00</a></p>
+          <p class="contacts-city">Город: [Город], возможен выезд</p>
+          <div class="socials-btns">
+            <a href="https://t.me" target="_blank" class="btn">Написать в Telegram</a>
+            <a href="https://wa.me" target="_blank" class="btn btn-outline">Написать в WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contacts-img">
+          <!-- Когда будет фото, замените строку ниже на: <img src="images/contact-photo.jpg" alt="Илья фотограф"> -->
+          <div class="placeholder-img">Фото Ильи (бэкстейдж)</div>
         </div>
       </div>
+
     </div>
   </main>
 
@@ -47,5 +61,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
