@@ -383,28 +383,179 @@ h1 {
   display: block;
 }
 
-/* Обучение */
-.education-box {
-  background: var(--bg-elevated);
+/* =========================================
+   СТРАНИЦА ОБУЧЕНИЯ
+   ========================================= */
+.edu-hero {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  gap: 40px;
+  flex-direction: column;
+  gap: 44px;
+  max-width: 880px;
+  margin: 0 auto 90px;
 }
 
-.education-box h3 {
+.edu-hero__img .placeholder-img,
+.edu-hero__img img {
+  height: 460px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.edu-hero__content h1 {
+  margin-bottom: 20px;
+}
+
+.edu-lead {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+.edu-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.edu-meta__label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.edu-meta__value {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--accent);
+}
+
+.edu-desc {
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  font-size: 15px;
+}
+
+.edu-section-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  margin-bottom: 12px;
-  font-size: 30px;
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.education-box p {
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto 90px;
+}
+
+.program-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.program-card:hover {
+  border-color: rgba(212, 197, 176, 0.3);
+}
+
+.program-card__header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.program-card__num {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.program-card__header h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.program-card__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.program-block h4 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.program-block ul {
+  list-style: none;
   color: var(--text-muted);
-  max-width: 600px;
+  font-size: 14px;
+}
+
+.program-block ul li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.program-block ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.edu-cta {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 64px 40px;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.edu-cta h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.edu-cta p {
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  font-size: 16px;
+}
+
+.edu-cta__btns {
+  justify-content: center;
 }
 
 /* Контакты (Фото сверху, описание и кнопки ниже) */
@@ -466,6 +617,7 @@ h1 {
 .socials-btns {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* Подвал */
@@ -566,6 +718,32 @@ h1 {
     gap: 24px;
   }
 
+  .edu-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .edu-hero__img .placeholder-img,
+  .edu-hero__img img {
+    height: 320px;
+  }
+
+  .program-card {
+    padding: 28px 20px;
+  }
+
+  .program-card__header h3 {
+    font-size: 24px;
+  }
+
+  .edu-cta {
+    padding: 40px 20px;
+  }
+
+  .edu-cta h2 {
+    font-size: 32px;
+  }
+
   .contacts-img .placeholder-img,
   .contacts-img img {
     height: 340px;
@@ -576,13 +754,8 @@ h1 {
     height: 360px;
   }
 
-  .card, .education-box, .contacts-box {
+  .card, .contacts-box {
     padding: 32px 24px;
-  }
-
-  .education-box {
-    flex-direction: column;
-    align-items: stretch;
   }
 
   .contacts-phone a {

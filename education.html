@@ -18,20 +18,219 @@
         <a href="reviews.html">Отзывы</a>
         <a href="contacts.html">Контакты</a>
       </nav>
+      <button class="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="tel:+79990000000" class="header__phone">+7 999 000 00 00</a>
     </div>
   </header>
 
   <main class="section">
     <div class="container">
-      <h1>Обучение</h1>
-      <div class="education-box">
-        <div>
-          <h3>Индивидуальное менторство и разбор портфолио</h3>
-          <p>Помогу выстроить свет, научу работать с клиентами в кадре и собирать коммерческое портфолио. Формат онлайн или очная встреча.</p>
+      
+      <!-- Первый экран курса (Фото сверху, описание ниже) -->
+      <div class="edu-hero">
+        <div class="edu-hero__img">
+          <!-- Замените на фото процесса обучения -->
+          <div class="placeholder-img">Фото с обучения</div>
         </div>
-        <a href="contacts.html" class="btn">Записаться на консультацию</a>
+
+        <div class="edu-hero__content">
+          <p class="hero__city">Авторский курс</p>
+          <h1>Живое обучение в мини-группе</h1>
+          <p class="edu-lead">Идеальный вариант для тех, кто хочет за месяц освоить новую профессию и сразу начать зарабатывать на фотографии.</p>
+          
+          <div class="edu-meta">
+            <div class="edu-meta__item">
+              <span class="edu-meta__label">Стоимость</span>
+              <span class="edu-meta__value">40 000 ₽</span>
+            </div>
+            <div class="edu-meta__item">
+              <span class="edu-meta__label">Длительность</span>
+              <span class="edu-meta__value">1 месяц (10 занятий)</span>
+            </div>
+            <div class="edu-meta__item">
+              <span class="edu-meta__label">График</span>
+              <span class="edu-meta__value">Выходные с 09:00</span>
+            </div>
+            <div class="edu-meta__item">
+              <span class="edu-meta__label">Поддержка</span>
+              <span class="edu-meta__value">6 месяцев онлайн</span>
+            </div>
+          </div>
+
+          <p class="edu-desc">Курс состоит из 10 занятий (около 34 часов работы) и домашних заданий, направленных на отработку практики и сборку продающего портфолио. Вся необходимая база для коммерческого фотографа.</p>
+
+          <div class="socials-btns">
+            <a href="contacts.html" class="btn">Записаться в мини-группу</a>
+            <a href="contacts.html" class="btn btn-outline">Индивидуальное обучение</a>
+          </div>
+        </div>
       </div>
+
+      <!-- Программа курса -->
+      <div class="edu-program">
+        <h2 class="edu-section-title">Программа курса</h2>
+        
+        <div class="program-list">
+          
+          <!-- Занятие 1 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятие 1</span>
+              <h3>Большая теория: настройки, подготовка и работа с клиентом</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <h4>Настройки камеры</h4>
+                <ul>
+                  <li>Выдержка, диафрагма, ISO в зависимости от света</li>
+                  <li>Форматы RAW и JPEG, баланс белого</li>
+                  <li>Базовые настройки камеры один раз и навсегда</li>
+                </ul>
+              </div>
+              <div class="program-block">
+                <h4>Подготовка к съемке</h4>
+                <ul>
+                  <li>Где искать моделей и как их подбирать</li>
+                  <li>Источники вдохновения, референсы и мудборды</li>
+                  <li>Выбор локации, времени и подготовка модели до съемки</li>
+                </ul>
+              </div>
+              <div class="program-block">
+                <h4>Работа с клиентом</h4>
+                <ul>
+                  <li>Общение на старте и понимание запроса клиента</li>
+                  <li>Отличие работы с обычными клиентами от моделей</li>
+                  <li>Особенности разных типажей и помощь с подбором одежды</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 2 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятие 2</span>
+              <h3>Обработка: как спастись от рутины</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <h4>Отбор и цветокоррекция</h4>
+                <ul>
+                  <li>Быстрый отбор материала в Photo Mechanic</li>
+                  <li>Работа с цветом, резкостью и экспорт в Lightroom / Capture One</li>
+                  <li>Создание собственных пресетов и отдача материала клиенту</li>
+                </ul>
+              </div>
+              <div class="program-block">
+                <h4>Ретушь в Adobe Photoshop</h4>
+                <ul>
+                  <li>Главные инструменты, пластика и устранение дефектов</li>
+                  <li>Создание экшенов и пакетная обработка серии</li>
+                  <li>Обзор автоматических плагинов для ускорения работы</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 3-4 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятия 3–4</span>
+              <h3>Практика в кафе и на улице</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <ul>
+                  <li>Съемка с моделью при естественном освещении</li>
+                  <li>Как создавать «живые» кадры и непринужденную атмосферу</li>
+                  <li>Чек-лист проверки техники и локации до старта съемки</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 5-7 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятия 5–7</span>
+              <h3>Практика в студии: естественный и искусственный свет</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <ul>
+                  <li>Съемка с моделью в интерьерной и циклорамной студии</li>
+                  <li>Импульсный и постоянный свет: в чем разница и что выбрать</li>
+                  <li>Отработка классических и коммерческих световых схем</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 8 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятие 8</span>
+              <h3>Сайт, социальные сети и маркетинг</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <ul>
+                  <li>Где брать постоянных клиентов и как поднять средний чек</li>
+                  <li>Организация фотодней и сбор собственной базы клиентов</li>
+                  <li>Создание сайта, оформление соцсетей, таргетинг и личные фишки</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 9 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятие 9</span>
+              <h3>Самостоятельная организация съемки</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <ul>
+                  <li>Полная организация и проведение съемки под присмотром наставника</li>
+                  <li>Детальный разбор отснятого материала и работа над ошибками</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Занятие 10 -->
+          <div class="program-card">
+            <div class="program-card__header">
+              <span class="program-card__num">Занятие 10</span>
+              <h3>Индивидуальное занятие</h3>
+            </div>
+            <div class="program-card__grid">
+              <div class="program-block">
+                <ul>
+                  <li>Закрепление тем, которые вызвали вопросы в процессе курса, под ваш личный запрос</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Нижний призыв к действию -->
+      <div class="edu-cta">
+        <h2>Хочешь научиться снимать?</h2>
+        <p>Снимать можно абсолютно на любую технику — телефона более чем достаточно, главное ваше желание зарабатывать на фотографии.</p>
+        <div class="socials-btns edu-cta__btns">
+          <a href="contacts.html" class="btn">Купить обучение в мини-группе</a>
+          <a href="contacts.html" class="btn btn-outline">Купить индивидуальное обучение</a>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -39,11 +238,12 @@
     <div class="container footer__inner">
       <p>© 2026 Илья</p>
       <div class="socials">
-        <a href="https://t.me" target="_blank">Telegram</a>
-        <a href="https://wa.me" target="_blank">WhatsApp</a>
+        <a href="https://t.me/username" target="_blank">Telegram</a>
+        <a href="https://wa.me/79990000000" target="_blank">WhatsApp</a>
       </div>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
