@@ -1,0 +1,277 @@
+:root {
+  --bg: #ffffff;
+  --bg-light: #f7f7f7;
+  --text: #1a1a1a;
+  --text-muted: #666666;
+  --accent: #1a1a1a;
+  --border: #e5e5e5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.nav a:hover {
+  color: var(--text-muted);
+}
+
+.header__phone {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: 0.2s;
+  border: 1px solid var(--accent);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Главный экран */
+.hero {
+  padding: 80px 0;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero__city {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero__desc {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.placeholder-img {
+  background: #eaeaea;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  border-radius: 4px;
+}
+
+/* Секции */
+.section {
+  padding: 80px 0;
+}
+
+.bg-light {
+  background: var(--bg-light);
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Портфолио */
+.tabs {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery .placeholder-img {
+  height: 320px;
+}
+
+/* Сетка карточек */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.card ul {
+  list-style: none;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--bg-light);
+}
+
+.author {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Обучение */
+.education-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  gap: 20px;
+}
+
+/* Подвал */
+.footer {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer__info {
+  text-align: right;
+  color: var(--text-muted);
+}
+
+.footer__info a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Адаптив под мобильные */
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .hero__inner, .gallery, .grid-3, .footer__inner, .education-box {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero h1 { font-size: 32px; }
+  .footer__info { text-align: left; margin-top: 30px; }
+}
