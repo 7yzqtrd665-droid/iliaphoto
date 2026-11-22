@@ -13,12 +13,18 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
@@ -30,17 +36,14 @@ html {
 /* Шапка */
 .header {
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 100;
+  background: #fff;
 }
 
 .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 75px;
 }
 
 .logo {
@@ -48,17 +51,21 @@ html {
   text-decoration: none;
   color: var(--text);
   letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-muted);
   font-size: 15px;
+  transition: 0.2s;
 }
 
-.nav a:hover {
-  color: var(--text-muted);
+.nav a:hover,
+.nav a.active {
+  color: var(--text);
+  font-weight: 500;
 }
 
 .header__phone {
@@ -78,6 +85,7 @@ html {
   font-size: 15px;
   transition: 0.2s;
   border: 1px solid var(--accent);
+  text-align: center;
 }
 
 .btn:hover {
@@ -97,18 +105,20 @@ html {
 /* Главный экран */
 .hero {
   padding: 80px 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 }
 
 .hero__city {
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 1px;
@@ -128,7 +138,7 @@ html {
 
 .placeholder-img {
   background: #eaeaea;
-  height: 400px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,18 +146,14 @@ html {
   border-radius: 4px;
 }
 
-/* Секции */
+/* Внутренние страницы */
 .section {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
-.bg-light {
-  background: var(--bg-light);
-}
-
-h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+h1 {
+  font-size: 36px;
+  margin-bottom: 35px;
 }
 
 /* Портфолио */
@@ -163,6 +169,7 @@ h2 {
   background: #fff;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 14px;
 }
 
 .tab.active {
@@ -181,7 +188,7 @@ h2 {
   height: 320px;
 }
 
-/* Сетка карточек */
+/* Карточки (Цены и Отзывы) */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -218,7 +225,7 @@ h2 {
 
 .author {
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: 600;
   font-size: 14px;
 }
@@ -231,47 +238,76 @@ h2 {
   padding: 40px;
   border: 1px solid var(--border);
   border-radius: 4px;
-  gap: 20px;
+  gap: 30px;
+}
+
+.education-box h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Контакты */
+.contacts-box {
+  max-width: 600px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.contacts-desc {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.contacts-phone a {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contacts-city {
+  margin: 10px 0 30px;
+  color: var(--text-muted);
+}
+
+.socials-btns {
+  display: flex;
+  gap: 15px;
 }
 
 /* Подвал */
 .footer {
-  padding: 60px 0;
+  padding: 30px 0;
   border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
 .footer__inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
-.socials {
-  margin-top: 25px;
-  display: flex;
-  gap: 15px;
-}
-
-.footer__info {
-  text-align: right;
+.socials a {
   color: var(--text-muted);
-}
-
-.footer__info a {
-  color: var(--text);
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
+  margin-left: 20px;
 }
 
-/* Адаптив под мобильные */
+.socials a:hover {
+  color: var(--text);
+}
+
+/* Адаптив */
 @media (max-width: 768px) {
   .nav { display: none; }
-  .hero__inner, .gallery, .grid-3, .footer__inner, .education-box {
+  .hero__inner, .gallery, .grid-3, .education-box {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
   }
-  .hero h1 { font-size: 32px; }
-  .footer__info { text-align: left; margin-top: 30px; }
+  .hero h1 { font-size: 30px; }
+  .socials-btns { flex-direction: column; }
 }
