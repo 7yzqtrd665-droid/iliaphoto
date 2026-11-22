@@ -37,13 +37,16 @@ main {
 .header {
   border-bottom: 1px solid var(--border);
   background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  height: 70px;
 }
 
 .logo {
@@ -54,8 +57,12 @@ main {
   font-size: 18px;
 }
 
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
 .nav a {
-  margin: 0 15px;
   text-decoration: none;
   color: var(--text-muted);
   font-size: 15px;
@@ -72,6 +79,26 @@ main {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
+  font-size: 15px;
+}
+
+/* Кнопка бургер-меню (скрыта на ПК) */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: 0.3s;
 }
 
 /* Кнопки */
@@ -104,7 +131,7 @@ main {
 
 /* Главный экран */
 .hero {
-  padding: 80px 0;
+  padding: 70px 0;
   display: flex;
   align-items: center;
 }
@@ -139,6 +166,7 @@ main {
 .placeholder-img {
   background: #eaeaea;
   height: 440px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,18 +181,19 @@ main {
 
 h1 {
   font-size: 36px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 /* Портфолио */
 .tabs {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tab {
-  padding: 8px 20px;
+  padding: 8px 18px;
   border: 1px solid var(--border);
   background: #fff;
   cursor: pointer;
@@ -188,7 +217,7 @@ h1 {
   height: 320px;
 }
 
-/* Карточки (Цены и Отзывы) */
+/* Карточки */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -300,14 +329,117 @@ h1 {
   color: var(--text);
 }
 
-/* Адаптив */
+/* =========================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ (Экраны до 768px)
+   ========================================= */
 @media (max-width: 768px) {
-  .nav { display: none; }
-  .hero__inner, .gallery, .grid-3, .education-box {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-    align-items: flex-start;
+  .burger {
+    display: flex;
   }
-  .hero h1 { font-size: 30px; }
-  .socials-btns { flex-direction: column; }
+
+  .header__phone {
+    display: none; /* На телефоне телефон убираем в меню или оставляем в контактах */
+  }
+
+  /* Выпадающее мобильное меню */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 17px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bg-light);
+  }
+
+  /* Главный экран */
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero__img {
+    order: -1; /* Фото автора на телефоне показываем сразу сверху */
+  }
+
+  .placeholder-img {
+    height: 320px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero__desc {
+    font-size: 15px;
+  }
+
+  /* Внутренние блоки */
+  .section {
+    padding: 40px 0;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card, .education-box, .contacts-box {
+    padding: 25px 20px;
+  }
+
+  .education-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contacts-phone a {
+    font-size: 22px;
+  }
+
+  .socials-btns {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .socials a {
+    margin: 0 10px;
+  }
 }
